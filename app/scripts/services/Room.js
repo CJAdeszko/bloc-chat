@@ -6,6 +6,10 @@
 
         Room.all = rooms;
 
+        Room.add = function(roomName){
+            rooms.$add({name: roomName});
+        }
+
         return Room;
     }
 
