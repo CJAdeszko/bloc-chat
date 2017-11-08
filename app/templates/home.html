@@ -1,12 +1,24 @@
-<h1>Bloc Chat</h1>
+<div class="hero-content">
+    <button class="sidebarOpen" ng-click="home.toggleBar()">☰</button>
+    <h1 class="hero-title">Bloc Chat</h1>
+</div>
 
-<div>
-    <button type="button" class="btn" ng-click="home.addRoom()">
+<div class="sidebar clearfix" id="sidebar" ng-hide="home.hideSidebar">
+    <button ng-click="home.toggleBar()" class="sidebarClose">&times;</button>
+
+    <div class="rooms" ng-repeat="room in home.rooms" ng-click="home.selectRoom(room)">
+        {{ room.name }}
+    </div>
+
+    <button type="button" class="newRoomBtn" ng-click="home.addRoom()">
         New Room
     </button>
 </div>
 
-
-<div class="rooms" ng-repeat="room in home.rooms">
-    {{ room.name }}
+<div class="activeRoom">
+  <h2>{{ activeRoom.name }}</h2>
+  <div class="message" ng-repeat="message in messages">
+    <h4>{{ message.username }}: </h4>
+    <p>{{ message.content }}</p>
+  </div>
 </div>

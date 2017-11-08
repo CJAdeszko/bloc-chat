@@ -1,7 +1,78 @@
-/*.rooms{
-  position: relative;
-  width: 100px;
-  padding-left: 0;
-  background-color: grey;
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
-*/
+
+.hero-content{
+position: relative;
+display: inline-block;
+width: 100%;
+background-color: lavender;
+}
+
+.hero-content .hero-title{
+  padding-left: 30px;
+  margin-top: 5px;
+}
+
+
+.sidebar {
+  position: fixed!important;
+  height: 100%;
+  width: 200px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px #888888;
+  z-index: 1;
+}
+
+
+.sidebarOpen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  background: none;
+}
+
+
+.sidebarClose{
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 5px;
+  padding: 10px;
+  border: none;
+  background: none;
+}
+
+
+.newRoomBtn{
+  position: relative;
+  display: inline-block;
+  margin-left: 35px;
+  margin-right: 35px;
+  height: 39px;
+  width: 120px;
+  border: 1px black solid;
+  border-radius: 7px;
+  background: none;
+}
+
+
+.rooms{
+  position: relative;
+  padding: 5px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.activeRoom {
+  border-left: 1px black solid;
+  margin-top: 50px;
+  margin-left: 225px;
+}

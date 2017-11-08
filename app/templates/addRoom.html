@@ -1,19 +1,15 @@
-
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Create New Room</h3>
             </div>
-
             <div class="modal-body">
                 <h4>Enter a room name</h4>
                 <form>
                     <input ng-model="newRoom" type="text" id="newRoomName" placeholder="Room name">
                 </form>
             </div>
-
             <div class="modal-footer">
               <button type="button" class="btn btn-default" ng-click="modal.cancel()">Cancel</button>
               <button type="button" class="btn btn-default" ng-click="modal.create(newRoom)">Create room</button>
             </div>
-
         </div>
