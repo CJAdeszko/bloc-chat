@@ -1,0 +1,17 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h3 class="modal-title">Create Username</h3>
+    </div>
+    <div ng-show="user.error">
+      Please use a name without tailing or leading whitespace.
+    </div>
+    <div class="modal-body">
+        <h4>Enter a username</h4>
+        <form>
+            <input ng-model="newUser" type="text" id="newUsername" placeholder="Username">
+        </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="user.create(newUser)">Finish</button>
+    </div>
+</div>
