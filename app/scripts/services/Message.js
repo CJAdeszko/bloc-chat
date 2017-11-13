@@ -3,7 +3,7 @@
         var Message = {};
         var ref = firebase.database().ref().child("messages");
         var messages = $firebaseArray(ref);
-  
+
 
         Message.getByRoomId = function(roomId){
             var activeRoomId = ref.orderByChild("roomId").equalTo(roomId);
@@ -11,6 +11,11 @@
 
             return activeRoomMessages;
         }
+
+        Message.send = function(newMessage) {
+            // Send method logic
+            return ref.push(newMessage);
+        };
 
     return Message;
     }

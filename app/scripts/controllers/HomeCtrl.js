@@ -1,9 +1,10 @@
 (function() {
-    function HomeCtrl($uibModal, Room, $scope, Message) {
+    function HomeCtrl($uibModal, Room, $scope, Message, $cookies) {
       this.rooms = Room.all;
 
       $scope.activeRoom = null;
       $scope.messages = null;
+      $scope.date = new Date();
 
       this.hideSidebar = true;
 
@@ -19,9 +20,23 @@
         });
       }
 
+      this.sendMessage = function(newMessage){
+        var sentMessage = {
+          content: newMessage,
+          roomId:$scope.activeRoom.$id,
+          sentAt: $scope.date.toString(),
+          username: $cookies.get("blocChatCurrentUser")
+        };
+
+          Message.send(sentMessage);
+
+          $scope.newMessage = null;
+      }
+
       this.toggleBar = function() {
         this.hideSidebar = !this.hideSidebar;
       }
+
 
 
 
@@ -30,5 +45,5 @@
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$uibModal', 'Room', '$scope', 'Message', HomeCtrl]);
+        .controller('HomeCtrl', ['$uibModal', 'Room', '$scope', 'Message', '$cookies', HomeCtrl]);
 })();

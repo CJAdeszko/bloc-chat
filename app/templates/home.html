@@ -17,8 +17,15 @@
 
 <div class="activeRoom">
   <h2>{{ activeRoom.name }}</h2>
-  <div class="message" ng-repeat="message in messages">
+  <div class="messageView" ng-repeat="message in messages">
     <h4>{{ message.username }}: </h4>
     <p>{{ message.content }}</p>
   </div>
+  <div class="sendMessage">
+      <form>
+          <input ng-model="newMessage" type="text" placeholder="Write your message here...">
+          <button type="submit" ng-click="home.sendMessage(newMessage)">Send</button>
+      </form>
+  </div>
+
 </div>

@@ -72,7 +72,18 @@ background-color: lavender;
 }
 
 .activeRoom {
-  border-left: 1px black solid;
   margin-top: 50px;
   margin-left: 225px;
+}
+
+.sendMessage input{
+  position: fixed;
+  margin-bottom: 0px;
+  width: 500px;
+}
+
+.activeRoom button{
+  position: relative;
+  float: right;
+  margin-bottom: 0;
 }
